@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PayrollModelStoreContainer" CdmEntityContainer="PayrollEntities5">
+    <EntitySetMapping Name="tbpersonal">
+      <EntityTypeMapping TypeName="PayrollModel.tbpersonal">
+        <MappingFragment StoreEntitySet="tbpersonal">
+          <ScalarProperty Name="idpersonal" ColumnName="idpersonal" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellidom" ColumnName="apellidom" />
+          <ScalarProperty Name="apellidop" ColumnName="apellidop" />
+          <ScalarProperty Name="lugarnacimiento" ColumnName="lugarnacimiento" />
+          <ScalarProperty Name="nacionalidad" ColumnName="nacionalidad" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="estadocivil" ColumnName="estadocivil" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbstatep">
+      <EntityTypeMapping TypeName="PayrollModel.tbstatep">
+        <MappingFragment StoreEntitySet="tbstatep">
+          <ScalarProperty Name="idstate" ColumnName="idstate" />
+          <ScalarProperty Name="statename" ColumnName="statename" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

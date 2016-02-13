@@ -1,0 +1,70 @@
+﻿@model NorthwindLab03.Models.tbpersonal
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detail</h2>
+
+<div>
+    <h4>State</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apellidop)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellidop)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apellidom)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.apellidom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lugarnacimiento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.lugarnacimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nacionalidad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.nacionalidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sexo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.sexo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estadocivil)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.estadocivil)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idpersonal }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

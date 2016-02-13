@@ -1,0 +1,94 @@
+﻿@model IEnumerable<NorthwindLab03.Models.tbpersonal>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Maintaining Personal</h2>
+    
+
+
+                          <form action="Index" method="post">
+
+                              <div class="row">
+                                  <div class="col-md-2">
+                                     Insert Name
+                                  </div>
+                                  <div class="col-md-2">
+                                      <input type="text" name="filter" class="normal text input" value="@ViewBag.Filter" width="40em" />
+                                  </div>
+                                  <div class="col-md-2">
+                                      <button type="submit" class="pretty medium danger btn" forecolor="White"> Buscar </button>
+                                  </div>
+                              </div>
+
+                          </form>
+                   
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.apellidop)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.apellidom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lugarnacimiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nacionalidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sexo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estadocivil)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apellidop)
+        </td>   
+        <td>
+            @Html.DisplayFor(modelItem => item.apellidom)
+        </td>       
+        <td>
+            @Html.DisplayFor(modelItem => item.lugarnacimiento)
+        </td>      
+        <td>
+            @Html.DisplayFor(modelItem => item.nacionalidad)
+        </td>       
+        <td>
+            @Html.DisplayFor(modelItem => item.sexo)
+        </td>     
+        <td>
+            @Html.DisplayFor(modelItem => item.estadocivil)
+        </td>     
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idpersonal }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idpersonal }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idpersonal })
+        </td>
+    </tr>
+}
+
+    
+</table>
+
+                      <p>
+                          @Html.ActionLink("Create New", "Create")
+                      </p>
+
+
+

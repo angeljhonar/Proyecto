@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PayrollModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbpersonal">
+          <Key>
+            <PropertyRef Name="idpersonal" />
+          </Key>
+          <Property Name="idpersonal" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="nchar" MaxLength="50" />
+          <Property Name="apellidom" Type="nchar" MaxLength="50" />
+          <Property Name="apellidop" Type="nchar" MaxLength="50" />
+          <Property Name="lugarnacimiento" Type="nchar" MaxLength="50" />
+          <Property Name="nacionalidad" Type="nchar" MaxLength="50" />
+          <Property Name="sexo" Type="nchar" MaxLength="50" />
+          <Property Name="estadocivil" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbstatep">
+          <Key>
+            <PropertyRef Name="idstate" />
+          </Key>
+          <Property Name="idstate" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="statename" Type="nchar" MaxLength="50" />
+          <Property Name="description" Type="nchar" MaxLength="150" />
+        </EntityType>
+        <EntityContainer Name="PayrollModelStoreContainer">
+          <EntitySet Name="tbpersonal" EntityType="Self.tbpersonal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbstatep" EntityType="Self.tbstatep" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PayrollModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tbpersonal">
+          <Key>
+            <PropertyRef Name="idpersonal" />
+          </Key>
+          <Property Name="idpersonal" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="apellidom" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="apellidop" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="lugarnacimiento" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="nacionalidad" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="sexo" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="estadocivil" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbstatep">
+          <Key>
+            <PropertyRef Name="idstate" />
+          </Key>
+          <Property Name="idstate" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="statename" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="150" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="PayrollEntities5" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbpersonal" EntityType="Self.tbpersonal" />
+          <EntitySet Name="tbstatep" EntityType="Self.tbstatep" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PayrollModelStoreContainer" CdmEntityContainer="PayrollEntities5">
+          <EntitySetMapping Name="tbpersonal">
+            <EntityTypeMapping TypeName="PayrollModel.tbpersonal">
+              <MappingFragment StoreEntitySet="tbpersonal">
+                <ScalarProperty Name="idpersonal" ColumnName="idpersonal" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="apellidom" ColumnName="apellidom" />
+                <ScalarProperty Name="apellidop" ColumnName="apellidop" />
+                <ScalarProperty Name="lugarnacimiento" ColumnName="lugarnacimiento" />
+                <ScalarProperty Name="nacionalidad" ColumnName="nacionalidad" />
+                <ScalarProperty Name="sexo" ColumnName="sexo" />
+                <ScalarProperty Name="estadocivil" ColumnName="estadocivil" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbstatep">
+            <EntityTypeMapping TypeName="PayrollModel.tbstatep">
+              <MappingFragment StoreEntitySet="tbstatep">
+                <ScalarProperty Name="idstate" ColumnName="idstate" />
+                <ScalarProperty Name="statename" ColumnName="statename" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
